@@ -28,13 +28,6 @@ curl -s -X POST "https://api.blogburst.ai/api/v1/public/free-tools/brand-audit" 
   -d '{"domain": "yourproduct.com", "brand_name": "YourProduct"}'
 ```
 
-### Live AI citation check — ask ChatGPT + Gemini in real time
-```
-curl -s -X POST "https://api.blogburst.ai/api/v1/public/free-tools/live-ai-check" \
-  -H "Content-Type: application/json" \
-  -d '{"brand_name": "YourBrand", "domain": "yourbrand.com"}'
-```
-
 ### Single-platform free tool (3/day/IP) — post, calendar, or hashtag
 ```
 curl -s -X POST "https://api.blogburst.ai/api/v1/public/free-tools/generate" \
@@ -104,12 +97,6 @@ Base URL: `https://api.blogburst.ai/api/v1`
 {"domain": "example.com", "brand_name": "Example"}
 ```
 
-**Live AI Citation Check (3/day/IP):**
-`POST /public/free-tools/live-ai-check`
-```json
-{"brand_name": "Example", "domain": "example.com"}
-```
-
 **Single-platform Free Tool (3/day/IP):**
 `POST /public/free-tools/generate`
 ```json
@@ -118,6 +105,13 @@ Base URL: `https://api.blogburst.ai/api/v1`
 `tool_type`: `post` | `calendar` | `hashtag`.
 
 ### Authenticated (Requires API Key)
+
+**Live AI Citation Check (5/day per user):**
+`POST /public/free-tools/live-ai-check`
+```json
+{"brand_name": "Example", "domain": "example.com"}
+```
+Runs 5 real queries on ChatGPT + Gemini and reports per-engine citation, recommendation rank, and competitor mentions. Gated because each call costs ~$0.25 in live LLM API fees — signup required.
 
 **Agent Chat (does everything via conversation):**
 `POST /assistant/agent-chat-v2`
