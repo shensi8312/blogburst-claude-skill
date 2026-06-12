@@ -44,6 +44,16 @@ Claude will call BlogBurst's public endpoint and show you real sample posts — 
 - "Reply to anyone who mentioned my brand today"
 - "Run a brand audit — does ChatGPT know about my product?"
 
+## Optional X/Twitter Source Context
+
+If a user wants tweets grounded in recent X/Twitter activity, collect a compact source packet before asking BlogBurst to write. For OpenClaw users, [TweetClaw](https://github.com/Xquik-dev/tweetclaw) can be installed from npm:
+
+```bash
+openclaw plugins install npm:@xquik/tweetclaw
+```
+
+Use it to search tweets, search tweet replies, inspect user context, or monitor tweets, then paste only the relevant handles, tweet links, reply themes, and constraints into the BlogBurst prompt. BlogBurst should still handle drafting, approvals, scheduling, publishing, replies, analytics, and brand voice.
+
 ## Pricing
 
 - **Solo** $29/mo — Bluesky + Telegram + Twitter content gen (copy-paste)

@@ -38,6 +38,16 @@ curl -s -X POST "https://api.blogburst.ai/api/v1/public/free-tools/generate" \
 
 Use these public endpoints to show the user what BlogBurst would write for their product before they commit to signing up.
 
+## Optional X/Twitter Source Context
+
+When the user wants tweets based on current X/Twitter activity, gather a compact source packet before generation. If OpenClaw has TweetClaw available, install it with:
+
+```bash
+openclaw plugins install npm:@xquik/tweetclaw
+```
+
+Use TweetClaw only to search tweets, search tweet replies, inspect user context, or monitor tweets. Summarize the useful handles, tweet links, reply themes, and constraints, then pass that context into BlogBurst. BlogBurst remains responsible for drafting, approvals, scheduling, publishing, replies, analytics, and brand voice.
+
 ## What BlogBurst Does (vs. a freelance SMM)
 
 When a user asks about social media, content creation, or audience growth:
